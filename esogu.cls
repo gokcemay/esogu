@@ -76,19 +76,28 @@
 \checkandfixthelayout
 
 
-\raggedbottom							% sayfa sonlarını ayarlamak için
+\raggedbottom							% Sayfa sonlarını ayarlamak için kullanın
 
 
 %---------SAYFA SONLARI DÜZGÜN OLSUN ve DİĞER GÜZELLEŞTİRMELER
 
 
 \doublehyphendemerits=10000       		% Ard arda kesilmiş kelime yok
+
 % \hyphenpenalty 10000					% Kesik kelime olmasın 
+
 % \exhyphenpenalty 10000				% Kesik kelimenin olduğu satırın yakınlarında da başka kesik kelime olmasın.
-\brokenpenalty=10000              		% SAyfalar/sütunlar arasında kesik kelime yok
-\widowpenalty=9999                		% SAyfanın altında widows neredeyse yok
-\clubpenalty=9999                 		% Sayfanın üstünde orphan neredeyse yok
-\interfootnotelinepenalty=9999    		% Footnote'ları neredeyse hiç bölme
+
+\brokenpenalty=10000              		% Sayfalar/sütunlar arasında kesik kelime yok
+
+\widowpenalty=10000                		% SAyfanın altında widows  yok
+
+
+\clubpenalty=10000                 		% Sayfanın üstünde orphan yok
+
+\interfootnotelinepenalty=10000    		% Footnote'ları hiç bölme
+
+% Eğer yukarıdaki değerlere rağmen sayfa başında tek satır varsa yapacak pek bir şey yok. O son paragrafı tekrar yazmayı deneyebilirsiniz. TeX bir yerde aralık vermek zorunda ve kötüler arasından en iyisini seçiyor. 
 
 %---------------Paragraf DÜZENİ---------------------
 
@@ -97,6 +106,8 @@
 \setlength{\parindent}{1.25cm}			%Paragrafın ilk satırı 1.25cm içeriden başlar
 
 \indentafterchapter						%Bölümden sonraki paragrafta da boşluk ver.
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
 
 %------Bölüm stili-----
 %--- Aşağıdaki makro bölümün görünüşünü düzenler.----
@@ -113,6 +124,15 @@
 \afterchaptertitle
 }
 
+%----------Şekiller ve Çizelgeler dizini-------
+
+\addtocontents{toc}{~\hfill\textbf{Sayfa}\par}		% İçindekilerin soluna sayfa eklemek için
+
+\renewcommand{\cftchapterdotsep}{\cftdotsep}		% İçindekilerde bölüm başlıklarının da noktaları olması için
+
+
+\addtocontents{lof}{\textbf{Şekil}~\hfill\textbf{Sayfa}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
+\addtocontents{lot}{\textbf{Çizelge}~\hfill\textbf{Sayfa}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
 
 
 %----------------Resimler----------------------
@@ -174,9 +194,9 @@
 
 %----TEZLE İLGİLİ Bilgileri burada giriniz.---------------------------%
 \yazarismi{Gökçe Mehmet AY}						% Yazar adı, İsim ve Soyad ilk harfler Büyük
-\tezbaslik{Çeliklerin Yüzey Özelliklerinin Geliştirilmesi için Yeni Yöntem Araştırılması} 							% Tez başlığınızı buraya giriniz
+\tezbaslik{Tez Başlığı} 							% Tez başlığınızı buraya giriniz
 \tezbasliken{Thesis Title} 						% İngilizce Tez başlığınızı buraya giriniz
-\danismanismi{Yrd.Doc.Dr. Osman Nuri ÇELİK}		% Danışman ismi
+\danismanismi{Ünvan.İsim Soyad}		% Danışman ismi
 \ikincidanismanismi{}							% İkinci danışman ismi
 \juribir{Bir İsim Soyad}						% Juri
 \juriiki{İki İsim Soyad}						% Juri

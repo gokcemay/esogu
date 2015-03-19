@@ -156,21 +156,22 @@ Enstitü Müdürü\space \space \space \space \space \space \space \space \space
 \end{framed}
 
 
-%-----------------------------------------------------------
+%-------------------Şekiller ve Çizelgeler Dizini----------------
+\renewcommand{\listfigurename}{Şekiller Dizini}
+\renewcommand{\listtablename}{Çizelgeler Dizini}
 
-\addtocontents{toc}{~\hfill\textbf{Sayfa}\par}		% İçindekilerin soluna sayfa eklemek için
 
-\renewcommand{\cftchapterdotsep}{\cftdotsep}		% İçindekilerde bölüm başlıklarının da noktaları olması için
+
 
 \include{bolum/ozet}
 \include{bolum/summary}
-
-%\renewcommand{\cftchapterleader}{\cftdotsep} % noktaları ekle
 
 
 \tableofcontents
 \newpage
 \listoffigures
+\newpage
+\listoftables
 
 \clearpage
 
