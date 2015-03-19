@@ -1,13 +1,36 @@
-%ESOGÜ Fen Bilimleri Enstitüsü Yönergesine göre hazırlanmıştır.
+%% esogu.cls
+%% Copyright 2015 Gökçe Mehmet AY
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Gökçe Mehmet AY.
+%
+% This work consists of the files esogu.cls and tez.tex
+
+% Memoir document class'ı üzerine yazılmıştır. Memoir hakkında bilgi: http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
+
+%ESOGÜ Fen Bilimleri Enstitüsü Aralık 2014 Tez Yazım Kılavuzuna göre hazırlanmıştır. http://fenenst.ogu.edu.tr/
 \ProvidesClass{esogu}[2015/03/01 version 1.00 ESOGU PhD Template]
 %\NeedsTexFormat{LaTeX2e}
 
-% Şablonda kullanılan her komutu açıklamaya çalıştım. Eğer bir sorunla karşılaşırsanız önce sorun yaşadığınız paketin kılavuzunu okuyun. 
+% Şablonda kullanılan her komutu açıklamaya çalıştım. Eğer bir sorunla karşılaşırsanız önce sorun yaşadığınız paketin kılavuzunu okumanızı tavsiye ederim. 
 
-% Bu şablonda normal koşullarda değişiklik yapmanız gerekmeyecektir. Sadece sonda "TEZLE İLGİLİ Bilgileri burada giriniz." bölümünde bilgilerinizi giriniz. İstisnalar
+% Bu şablonda normal koşullarda değişiklik yapmanız gerekmeyecektir. Sadece sonda "TEZLE İLGİLİ Bilgileri burada giriniz." bölümünde bilgilerinizi giriniz. 
+%%---İstisnalar
 
 % - Eğer yatık sayfa yapacaksanız pdflscape paketini paketler bölümünden aktiflemeniz gerekir. Yatık sayfa için sondaki Önemli Notları okuyun.
 
+%----Yapılacaklar
+% 1. 4 ve 5'inci seviye başlıklarını altı çizili yap
+% 2. Class optionları ile draft ve diğerlerini ekle
 
 
 %Şablonla ilgili sorular için www.gmay.me adresinden Gökçe Mehmet AY'a ulaşabilirsiniz.
@@ -33,7 +56,8 @@
 \usepackage{graphicx}
 \usepackage{framed}				%kutu çizmek için
 % \usepackage{pdflscape}		% Yatık sayfa gerekirse
-
+\usepackage{amsmath}			% Matematik için
+\usepackage[version=3]{mhchem}	% Kimya formülleri için
 
 %------------------ Referanslar için ---------------------
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
@@ -88,6 +112,8 @@
 \renewcommand*{\afterchapternum}{}
 \afterchaptertitle
 }
+
+
 
 %----------------Resimler----------------------
 \setlength{\textfloatsep}{2\baselineskip}

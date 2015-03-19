@@ -1,3 +1,23 @@
+%% tez.tex
+%% Copyright 2015 Gökçe Mehmet AY
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Gökçe Mehmet AY.
+%
+% This work consists of the files esogu.cls and tez.tex
+
+
+
+
 % Şablon otomatik olarak kapak ve onay sayfalarını sizin esogu.cls dosyasında girdiğiniz bilgilere göre oluşturmaktadır. Lütfen o dosyadaki "TEZLE İLGİLİ Bilgileri burada giriniz." bölümünü doldurunuz. 
 
 % Eğer Tezinizi bu dosyada yazacaksanız "TEZİNİZİ BURADAN SONRA EKLEYİNİZ" bölümünden sonra ekeleyebilirsiniz. Özet ve Summary bölümleri /bolum klasörünün içindedir. 
@@ -6,12 +26,14 @@
 
 
 
-\documentclass[]{esogu}			%Optionlar boş olacak, şablonu kullanmak için
-\usepackage{lipsum}				%Anlamsız metin yazmak için
-\bibliography{Zotero.bib}
+\documentclass[]{esogu}			% Optionlar boş olacak, şablonu kullanmak için
+\usepackage{lipsum}				% Örnek tezde anlamsız metin yazmak için bu paket gerekli. Tezinizde bu bölümü silebilirsiniz. 
+
+\bibliography{kaynakca.bib}		% Kaynakça dosyası için Bunu Zotero, Mendeley, Endnote ya da CiteU gibi bir programla oluşturmanızı tavsiye ederim. Zotero hakkında bilgi http://makina.gmay.me/Bulutta/ adresindeki ekitapta mevcut.
 
 %----------------------------------------------------------------------------------------
 \begin{document}
+
 \frontmatter %roma rakamları ile yazdırmak için
 \title{OGU deneme}
 %-----Dış kapak Türkçe---------- Burayı değiştirmeyin
@@ -136,29 +158,38 @@ Enstitü Müdürü\space \space \space \space \space \space \space \space \space
 
 %-----------------------------------------------------------
 
+\addtocontents{toc}{~\hfill\textbf{Sayfa}\par}		% İçindekilerin soluna sayfa eklemek için
 
+\renewcommand{\cftchapterdotsep}{\cftdotsep}		% İçindekilerde bölüm başlıklarının da noktaları olması için
 
 \include{bolum/ozet}
 \include{bolum/summary}
 
-\tableofcontents*
-\addtocontents{toc}{~\hfill\textbf{Sayfa}\par}
+%\renewcommand{\cftchapterleader}{\cftdotsep} % noktaları ekle
+
+
+\tableofcontents
+\newpage
+\listoffigures
 
 \clearpage
 
 
 \mainmatter %arap harfleri ile yazdırmak için
-
+% AltBölüm numaralaması
+\setcounter{secnumdepth}{5} % 5 derine kadar numara ver.
+%\setsecnumdepth{subsubsection}
 %---------TEZİNİZİ BURADAN SONRA EKLEYİNİZ-----------------
 
 
 
 \include{bolum/Giris}				% Metni dosyadan çağırmak için örnek
-\chapter{gelişme}					% Metni main.tex dosyasında yazmak için örnek
+\chapter{Literatür Araştırması}					% Metni main.tex dosyasında yazmak için örnek
 \lipsum 
-\chapter{Deneme -ö- ü ş ğ için}		% Konu başlığını ve bir kaç satırı main.tex dosyasında yazıp kalanları dış dosyadan almak için örnek. 
+\chapter{Bulgular ve Tartışma}		% Konu başlığını ve bir kaç satırı main.tex dosyasında yazıp kalanları dış dosyadan almak için örnek. 
 Ğ Ş İ gna-gtjsnthjnjfg frakıgnre. gırengğoehnttodgn. gnteıhnrewğhton. nnıdgeantğ. kkkkkk kkkkkk kkkk   kkkkkk kkkkkk kkkkk kkkk kkk kkkkk kkkkkk kkkkkkkk kkkkkk  kkkkkk kkkkkk kkk kkk kkkk kkk kkkk.jkjjj jjjjjj jjjjjjjjjjL 
-\input{bolum/bolum1}				
+\input{bolum/bulgular}	
+\input{bolum/sonuclar}
 \newpage
 
 \printbibliography[ title={KAYNAKLAR\space DİZİNİ}] %numaralı olsun istersen optionlarda heading=bibnumbered, yaz

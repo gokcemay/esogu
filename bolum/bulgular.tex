@@ -1,0 +1,43 @@
+\lipsum[1-2]
+\section{Örnekler}
+Eğer metin içinde tabloya referans vermek isterseniz Tablo \ref{tab:den} yazarsınız. 
+% ----TABLO Örneği--------
+\begin{table}[h]
+\centering
+\caption{Deneme Tablosu} \label{tab:den}
+\begin{tabular}{|l|l|l|}
+\hline
+sıra   & sayı   & toplam \\ \hline
+1      & 2      & 3      \\ \hline
+Kelime & deneme & son    \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Matematik}
+Eğer metin içinde \(\lim_{x \to \infty} \exp(-x) = 0\) ya da ortalayabilir
+\begin{displaymath}
+\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
+\end{displaymath}
+isterseniz de numaralı denklem yazabilirsiniz.
+
+\begin{equation}
+\frac{\mathrm d}{\mathrm d x} \left( k g(x) \right)
+\end{equation}
+\subsubsection{Kimya}
+\ce{B4C} yazabilirsiniz. Ya da
+
+\ce{CO2 + C -> 2CO}
+
+Daha fazlası için mhchem paketine bakınız
+ 
+\section{Analiz}
+Eğer metin içinde şekile referans vermek isterseniz Şekil\ref{fig:PtaTorc} yazarsınız. 
+\begin{figure}[h]
+\caption{PTA Torç}\label{fig:PtaTorc}
+\includegraphics[width=\textwidth]{gorseller/ptaTorc}
+\end{figure}
+\lipsum[1-2]
+\parencite{celik_microstructure_2013} \parencite{gatto_plasma_2004}
+\cite{celik_effects_2011}
+
+\cite{yazdi_microstructure_2015},dfder \cite{keehan_influence_2006}, \cite{guo_microstructure_2014}, \cite{kim_variation_2013}, \cite{xibao_metallurgical_2005-1}, \cite{jin_effect_1997}
