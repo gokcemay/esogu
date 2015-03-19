@@ -1,0 +1,169 @@
+% Şablon otomatik olarak kapak ve onay sayfalarını sizin esogu.cls dosyasında girdiğiniz bilgilere göre oluşturmaktadır. Lütfen o dosyadaki "TEZLE İLGİLİ Bilgileri burada giriniz." bölümünü doldurunuz. 
+
+% Eğer Tezinizi bu dosyada yazacaksanız "TEZİNİZİ BURADAN SONRA EKLEYİNİZ" bölümünden sonra ekeleyebilirsiniz. Özet ve Summary bölümleri /bolum klasörünün içindedir. 
+
+
+
+
+
+\documentclass[]{esogu}			%Optionlar boş olacak, şablonu kullanmak için
+\usepackage{lipsum}				%Anlamsız metin yazmak için
+\bibliography{Zotero.bib}
+
+%----------------------------------------------------------------------------------------
+\begin{document}
+\frontmatter %roma rakamları ile yazdırmak için
+\title{OGU deneme}
+%-----Dış kapak Türkçe---------- Burayı değiştirmeyin
+\begin{titlingpage*}
+\begin{center}
+\footnotesize
+
+
+	\begin{vplace}							% Metni ortalamak için
+	\large									%tezbaşlığını büyük yazmak için
+	\tbaslik\\								% Tez başlığı
+	\footnotesize							% 10 puntoya düş
+
+	\vspace{1pc}
+	\yazar	\\								% yazar ismi
+	\vspace{1pc}
+	\textbf{\unvan\space TEZİ}\\
+  	\vspace{1pc}
+	\bolum \space Anabilim Dalı\\
+	\vspace{1pc}
+	\teslim\\
+	\end{vplace}
+\end{center}
+
+\end{titlingpage*}
+%----------------------------------------------------------------------
+%-----Dış kapak İngilizce-----Burayı değiştirmeyin-----
+\begin{titlingpage*}
+\begin{center}
+\footnotesize
+
+
+	\begin{vplace}							% Metni ortalamak için
+	\large									%tezbaşlığını büyük yazmak için
+	\tbasliken\\								% Tez başlığı
+	\footnotesize							% 10 puntoya düş
+
+	\vspace{1pc}
+	\yazar	\\								% yazar ismi
+	\vspace{1pc}
+	\textbf{\unvanen\space THESIS}\\
+  	\vspace{1pc}
+	\bolumen \space Department\\
+	\vspace{1pc}
+	\teslimen\\
+	\end{vplace}
+\end{center}
+
+\end{titlingpage*}
+%----------------------------------------------------------------------
+%	iç Kapak Burayı değiştirmeyin
+%----------------------------------------------------------------------------------------
+
+\begin{titlingpage*}
+\begin{center}
+\footnotesize
+\begin{vplace}							% Metni ortalamak için
+\tbaslik\\								% Tez başlığı
+\vspace{7pc}							% 12 punto 7 boşluk için
+\yazar	\\								% yazar ismi
+\vspace{7pc}							% 12 punto 7 boşluk için
+Eskişehir Osmangazi Üniversitesi\\		
+Fen Bilimleri Enstitüsü\\
+Lisansüstü Yönetmeliği Uyarınca\\
+\bolum \space Anabilim Dalı\\
+\bilim \space Bilim Dalı\\
+\unvan \space TEZİ\\
+Olarak Hazırlanmıştır\\
+\vspace{7pc}
+Danışman:\space \danisman\\			
+\vspace{2pc}
+\proje\\ 								%Varsa proje kapsamında desteklenip desteklenmediği buraya yazılacak
+\end{vplace}
+
+\vfill
+\teslim\\
+\vspace{2cm}
+\end{center}
+
+\end{titlingpage*}
+\normalsize
+
+%----------Onay--------------
+\thispagestyle{empty}
+\begin{center}
+\huge
+\textbf{ONAY} 
+\normalsize
+\end{center}
+\bolum \space Anabilim Dalı \unvan \space öğrencisi \yazar \space tezi olarak hazırladığı "\tbaslik" başlıklı bu çalışma, jürimizce lisansüstü yönetmeliğin ilgili maddeleri uyarınca değerlendirilerek kabul edilmiştir.
+
+\noindent \textbf{Danışman}\space\space\space\space\space\space\space\space:\space \danisman 
+
+\noindent \textbf{İkinci Danışman}\space:\space \ikidanisman
+\newline
+
+\noindent \textbf{Doktora Tez Savunma Jürisi:}
+
+\noindent \textbf{Üye :\space}\jbir
+
+\noindent \textbf{Üye :\space}\jiki
+
+\noindent \textbf{Üye :\space}\juc
+
+\noindent \textbf{Üye :\space}\jdort
+
+\noindent \textbf{Üye :\space}\jbes
+
+
+\begin{framed}
+Fen Bilimleri Enstitüsü Yönetim Kurulu'nun ........................ tarih ve  \space \space \space \space \space\\................... sayılı kararıyla onaylanmıştır. 
+\newline
+\newline
+\begin{flushright}
+\mudur \hspace{1cm}
+
+Enstitü Müdürü\space \space \space \space \space \space \space \space \space \space \space \space \space  %Düzeltilecek ***Biliyorum çok kötü ama hspace çalışmadı
+\end{flushright}
+
+\end{framed}
+
+
+%-----------------------------------------------------------
+
+
+
+\include{bolum/ozet}
+\include{bolum/summary}
+
+\tableofcontents*
+\addtocontents{toc}{~\hfill\textbf{Sayfa}\par}
+
+\clearpage
+
+
+\mainmatter %arap harfleri ile yazdırmak için
+
+%---------TEZİNİZİ BURADAN SONRA EKLEYİNİZ-----------------
+
+
+
+\include{bolum/Giris}				% Metni dosyadan çağırmak için örnek
+\chapter{gelişme}					% Metni main.tex dosyasında yazmak için örnek
+\lipsum 
+\chapter{Deneme -ö- ü ş ğ için}		% Konu başlığını ve bir kaç satırı main.tex dosyasında yazıp kalanları dış dosyadan almak için örnek. 
+Ğ Ş İ gna-gtjsnthjnjfg frakıgnre. gırengğoehnttodgn. gnteıhnrewğhton. nnıdgeantğ. kkkkkk kkkkkk kkkk   kkkkkk kkkkkk kkkkk kkkk kkk kkkkk kkkkkk kkkkkkkk kkkkkk  kkkkkk kkkkkk kkk kkk kkkk kkk kkkk.jkjjj jjjjjj jjjjjjjjjjL 
+\input{bolum/bolum1}				
+\newpage
+
+\printbibliography[ title={KAYNAKLAR\space DİZİNİ}] %numaralı olsun istersen optionlarda heading=bibnumbered, yaz
+\defbibheading{bibliography}[\refname]{%
+  \section*{#1}%
+  \markboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}}
+
+\end{document}
