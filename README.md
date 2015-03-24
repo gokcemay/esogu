@@ -1,12 +1,13 @@
 # ESOGÜ FBE için LaTeX şablonu
 
 ##English
-A LaTeX thesis template for Eskisehir Osmangazi University. 
+An unofficial LaTeX thesis template for Eskisehir Osmangazi University. 
 
 ##Türkçe
 
-Eskişehir Osmangazi Üniversitesi Fen Bilimleri Enstitüsü Aralık 2014 [Tez Yazım Kılavuzuna] uygun bir LaTeX tez şablonu. 
-esogu.cls [Memoir] üzerine yapılmış bir belge sınıfı. Sayfa boyutlarını ve görünüşü düzenliyor. Kullanmak için esogu.cls dosyası içinde tez hakkında bilgiler bölümüne kendi bilgilerinizi girmek gerekiyor. 
+Eskişehir Osmangazi Üniversitesi Fen Bilimleri Enstitüsü Aralık 2014 [Tez Yazım Kılavuzuna] uygun bir LaTeX tez şablonu. Şablon FBE tarafından onaylanmamıştır. 
+
+Şablon esogu.cls [Memoir] üzerine yapılmış bir belge sınıfıdır. Sayfa boyutlarını ve görünüşü kılavuza göre düzenliyor. Kullanmak için esogu.cls dosyası içinde tez hakkında bilgiler bölümüne kendi bilgilerinizi girmek gerekiyor. 
 
 ## Yapılacaklar
 - 4. ve 5'inci seviye başlıkları altı çizili yapmak
