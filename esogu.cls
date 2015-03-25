@@ -70,7 +70,7 @@
 %-------------SAYFA DÜZENİ--------------------------------
 
 \setlrmarginsandblock{3cm}{2.5cm}{*}	% sayfa sol sağ
-\setulmarginsandblock{2.5cm}{2.5cm}{*}	% sayfa üst alt
+\setulmarginsandblock{3cm}{2.5cm}{*}	% sayfa üst alt
 \setheaderspaces{2cm}{*}{*}				% header uzaklığı için
 
 \checkandfixthelayout
