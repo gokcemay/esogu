@@ -14,25 +14,25 @@
 % The Current Maintainer of this work is Gökçe Mehmet AY.
 %
 % This work consists of the files esogu.cls and tez.tex
-
+%
 % Memoir document class'ı üzerine yazılmıştır. Memoir hakkında bilgi: http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
-
+%
 %ESOGÜ Fen Bilimleri Enstitüsü Aralık 2014 Tez Yazım Kılavuzuna göre hazırlanmıştır. http://fenenst.ogu.edu.tr/
 \ProvidesClass{esogu}[2015/03/01 version 1.00 ESOGU PhD Template]
 %\NeedsTexFormat{LaTeX2e}
-
+%
 % Şablonda kullanılan her komutu açıklamaya çalıştım. Eğer bir sorunla karşılaşırsanız önce sorun yaşadığınız paketin kılavuzunu okumanızı tavsiye ederim. 
-
+%
 % Bu şablonda normal koşullarda değişiklik yapmanız gerekmeyecektir. Sadece sonda "TEZLE İLGİLİ Bilgileri burada giriniz." bölümünde bilgilerinizi giriniz. 
 %%---İstisnalar
-
+%
 % - Eğer yatık sayfa yapacaksanız pdflscape paketini paketler bölümünden aktiflemeniz gerekir. Yatık sayfa için sondaki Önemli Notları okuyun.
-
+%
 %----Yapılacaklar
 % 1. 4 ve 5'inci seviye başlıklarını altı çizili yap
 % 2. Class optionları ile draft ve diğerlerini ekle
-
-
+%
+%
 %Şablonla ilgili sorular için www.gmay.me adresinden Gökçe Mehmet AY'a ulaşabilirsiniz.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -70,7 +70,7 @@
 %-------------SAYFA DÜZENİ--------------------------------
 
 \setlrmarginsandblock{3cm}{2.5cm}{*}	% sayfa sol sağ
-\setulmarginsandblock{2.5cm}{2.5cm}{*}	% sayfa üst alt
+\setulmarginsandblock{3cm}{2.5cm}{*}	% sayfa üst alt
 \setheaderspaces{2cm}{*}{*}				% header uzaklığı için
 
 \checkandfixthelayout
