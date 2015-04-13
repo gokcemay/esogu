@@ -67,6 +67,16 @@
 \DefineBibliographyStrings{english}{andothers={\space vd \space}}		%et al yerine vd koyması için
 %---------------------------------------------------------
 
+%Figür ve tablo açıklaması için
+\usepackage{boxhandler}
+
+\captiontitlefont{\normalfont}% açıklama başlık fontu
+\precaption{\raggedright}% açıklama nosu için
+\captiondelim{\space}% newline
+\captionstyle{\centerlastline}% for title
+\setlength{\belowcaptionskip}{\onelineskip}
+
+
 %-------------SAYFA DÜZENİ--------------------------------
 
 \setlrmarginsandblock{3cm}{2.5cm}{*}	% sayfa sol sağ
@@ -133,10 +143,16 @@
 
 \addtocontents{lof}{\textbf{Şekil}~\hfill\textbf{Sayfa}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
 \addtocontents{lot}{\textbf{Çizelge}~\hfill\textbf{Sayfa}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
-
+% \renewcommand*{\afterloftitle}{\thispagestyle{plain}%
+% \par\nobreak {\normalfont Figure \hfill Page}\par\nobreak}
 
 %----------------Resimler----------------------
-\setlength{\textfloatsep}{2\baselineskip}
+%\setlength{\textfloatsep}{2\baselineskip}
+\setlength{\floatsep}{3\onelineskip}
+ \setlength{\intextsep}{2\onelineskip}
+\setlength{\textfloatsep}{2\onelineskip}
+ \setlength{\dblfloatsep}{2\onelineskip}
+ \setlength{\dbltextfloatsep}{2\onelineskip}
 
 %---Sayfa numaraları----
 \copypagestyle{chapter}{plain}

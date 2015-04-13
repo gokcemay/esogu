@@ -2,16 +2,16 @@
 \section{Örnekler}
 Eğer metin içinde tabloya referans vermek isterseniz Tablo \ref{tab:den} yazarsınız. 
 % ----TABLO Örneği--------
-\begin{table}[h]
-\centering
-\caption{Deneme Tablosu} \label{tab:den}
+\bxtable[ht]
+{Deneme Tablosu \label{tab:den}}
+{
 \begin{tabular}{|l|l|l|}
 \hline
 sıra   & sayı   & toplam \\ \hline
 1      & 2      & 3      \\ \hline
 Kelime & deneme & son    \\ \hline
 \end{tabular}
-\end{table}
+}
 
 \subsection{Matematik}
 Eğer metin içinde \(\lim_{x \to \infty} \exp(-x) = 0\) ya da ortalayabilir
@@ -32,10 +32,10 @@ Daha fazlası için mhchem paketine bakınız.
  
 \section{Analiz}
 Eğer metin içinde şekile referans vermek isterseniz Şekil\ref{fig:PtaTorc} yazarsınız. 
-\begin{figure}[h]
-\caption{PTA Torç}\label{fig:PtaTorc}
-\includegraphics[width=\textwidth]{gorseller/ptaTorc}
-\end{figure}
+
+\bxfigure[h]
+{PTA Torç \label{fig:PtaTorc}}
+{\includegraphics[width=\textwidth]{gorseller/ptaTorc}}
 \lipsum[1-2]
 \parencite{celik_microstructure_2013} \parencite{gatto_plasma_2004}
 \cite{celik_effects_2011}
