@@ -61,14 +61,17 @@
 
 %------------------ Referanslar için ---------------------
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
-\usepackage[citestyle=authoryear,bibstyle=authoryear]{biblatex}
+\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2]{biblatex}
 
-\renewcommand*{\finalnamedelim}{\addspace ve\space}					%and yerine ve koyması için
-\DefineBibliographyStrings{english}{andothers={\space vd \space}}		%et al yerine vd koyması için
+\renewcommand*{\finalnamedelim}{\addspace ve\space}%and yerine ve koyması için
+\renewcommand*{\nameyeardelim}{\addcomma\space} %isimle yıl arası virgül için
+
+\DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
+
 %---------------------------------------------------------
 
 %Figür ve tablo açıklaması için
-\usepackage{boxhandler}
+\usepackage{boxhandler} %Figürün başından figür yazısının başlaması için bu paket kullanıyor. Tablolar için bunu aktiflemedim. Ancak çok küçük figürler için problem var.
 
 \captiontitlefont{\normalfont}% açıklama başlık fontu
 \precaption{\raggedright}% açıklama nosu için
@@ -76,6 +79,9 @@
 \captionstyle{\centerlastline}% for title
 \setlength{\belowcaptionskip}{\onelineskip}
 
+\addto\captionsturkish{%
+  \renewcommand{\tablename}{Çizelge}
+}
 
 %-------------SAYFA DÜZENİ--------------------------------
 
@@ -136,13 +142,13 @@
 
 %----------Şekiller ve Çizelgeler dizini-------
 
-\addtocontents{toc}{~\hfill\textbf{Sayfa}\par}		% İçindekilerin soluna sayfa eklemek için
+\addtocontents{toc}{~\hfill\underline{\textbf{Sayfa}}\par}		% İçindekilerin soluna sayfa eklemek için
 
 \renewcommand{\cftchapterdotsep}{\cftdotsep}		% İçindekilerde bölüm başlıklarının da noktaları olması için
 
 
-\addtocontents{lof}{\textbf{Şekil}~\hfill\textbf{Sayfa}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
-\addtocontents{lot}{\textbf{Çizelge}~\hfill\textbf{Sayfa}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
+\addtocontents{lof}{\underline{\textbf{Şekil}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
+\addtocontents{lot}{\underline{\textbf{Çizelge}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
 % \renewcommand*{\afterloftitle}{\thispagestyle{plain}%
 % \par\nobreak {\normalfont Figure \hfill Page}\par\nobreak}
 
@@ -177,6 +183,9 @@
 %----------Kaynak dizini-----------------
 
 \setlength{\bibitemsep}{2\parskip}
+
+
+
 %----TEZLE İlgili değişkenler tanımlama-------------------------------%
 
 \newcommand*{\yazarismi}[1]{\def\yazar{#1}}
@@ -206,10 +215,10 @@
 
 \newcommand*{\enstitumuduru}[1]{\def\mudur{#1}}
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%
+%---------ÖNEMLİ-------------
 %----TEZLE İLGİLİ Bilgileri burada giriniz.---------------------------%
-\yazarismi{Gökçe Mehmet AY}						% Yazar adı, İsim ve Soyad ilk harfler Büyük
+\yazarismi{Öğrenci İsmi}						% Yazar adı, İsim ve Soyad ilk harfler Büyük
 \tezbaslik{Tez Başlığı} 							% Tez başlığınızı buraya giriniz
 \tezbasliken{Thesis Title} 						% İngilizce Tez başlığınızı buraya giriniz
 \danismanismi{Ünvan.İsim Soyad}		% Danışman ismi
@@ -229,6 +238,9 @@
 \teslimtarihi{ARALIK 2015}						% Tez teslim ayı
 \teslimtarihien{DECEMBER 2015}					% İngilizce Tez teslim ayı
 \enstitumuduru{Ünvan İsim Soyad} 
+%------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \chapterstyle{bolum}
 

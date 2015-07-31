@@ -119,11 +119,11 @@ Danışman:\space \danisman\\
 %----------Onay--------------
 \thispagestyle{empty}
 \begin{center}
-\huge
+\large
 \textbf{ONAY} 
 \normalsize
 \end{center}
-\bolum \space Anabilim Dalı \unvan \space öğrencisi \yazar \space tezi olarak hazırladığı "\tbaslik" başlıklı bu çalışma, jürimizce lisansüstü yönetmeliğin ilgili maddeleri uyarınca değerlendirilerek kabul edilmiştir.
+\bolum \space Anabilim Dalı \unvan \space öğrencisi \yazar \space tezi olarak hazırladığı "\textbf{\tbaslik}" başlıklı bu çalışma, jürimizce lisansüstü yönetmeliğin ilgili maddeleri uyarınca değerlendirilerek kabul edilmiştir.
 
 \noindent \textbf{Danışman}\space\space\space\space\space\space\space\space:\space \danisman 
 
@@ -162,7 +162,7 @@ Enstitü Müdürü\space \space \space \space \space \space \space \space \space
 
 
 \chapter{Etik Beyan}
-Etik beyan bu sayfaya eklenecek.
+\input{bolum/etik}
 \clearpage
 
 \include{bolum/ozet}
@@ -195,12 +195,14 @@ Etik beyan bu sayfaya eklenecek.
 Ğ Ş İ gna-gtjsnthjnjfg frakıgnre. gırengğoehnttodgn. gnteıhnrewğhton. nnıdgeantğ. kkkkkk kkkkkk kkkk   kkkkkk kkkkkk kkkkk kkkk kkk kkkkk kkkkkk kkkkkkkk kkkkkk  kkkkkk kkkkkk kkk kkk kkkk kkk kkkk.jkjjj jjjjjj jjjjjjjjjjL 
 \input{bolum/bulgular}	
 \input{bolum/sonuclar}
-\input{bolum/sekildeneme}
+%\input{bolum/sekildeneme}
 \newpage
 
 \printbibliography[ title={KAYNAKLAR\space DİZİNİ}] %numaralı olsun istersen optionlarda heading=bibnumbered, yaz
 \defbibheading{bibliography}[\refname]{%
   \section*{#1}%
   \markboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}}
+  
+\noindent \addtocontents{toc}{\textbf{Özgeçmiş}}   % Sadece doktora tezleri için
 
 \end{document}

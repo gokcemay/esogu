@@ -2,16 +2,17 @@
 \section{Örnekler}
 Eğer metin içinde tabloya referans vermek isterseniz Tablo \ref{tab:den} yazarsınız. 
 % ----TABLO Örneği--------
-\bxtable[ht]
-{Deneme Tablosu \label{tab:den}}
-{
+\begin{table}
+\centering
+\caption{Deneme Tablosu.}\label{tab:den}
 \begin{tabular}{|l|l|l|}
 \hline
 sıra   & sayı   & toplam \\ \hline
 1      & 2      & 3      \\ \hline
 Kelime & deneme & son    \\ \hline
 \end{tabular}
-}
+\end{table}
+
 
 \subsection{Matematik}
 Eğer metin içinde \(\lim_{x \to \infty} \exp(-x) = 0\) ya da ortalayabilir
@@ -37,7 +38,7 @@ Eğer metin içinde şekile referans vermek isterseniz Şekil\ref{fig:PtaTorc} y
 {PTA Torç \label{fig:PtaTorc}}
 {\includegraphics[width=\textwidth]{gorseller/ptaTorc}}
 \lipsum[1-2]
-\parencite{celik_microstructure_2013} \parencite{gatto_plasma_2004}
-\cite{celik_effects_2011}
+Kaynakça böyle verilebilir \parencite{celik_microstructure_2013} ya da iki yazarlı ise böyle verilebilir \parencite{gatto_plasma_2004} veya ikiden fazla ise böyle verilebilir.
+\parencite{celik_effects_2011}
 
-\cite{yazdi_microstructure_2015},dfder \cite{keehan_influence_2006}, \cite{guo_microstructure_2014}, \cite{kim_variation_2013}, \cite{xibao_metallurgical_2005-1}, \cite{jin_effect_1997}
+Kaynakça listesi için daha çok referans verilmek istenirse \parencite{yazdi_microstructure_2015, keehan_influence_2006, guo_microstructure_2014}, \parencite{kim_variation_2013}, bir başkası \parencite{xibao_metallurgical_2005},  ya da başkası \parencite{jin_effect_1997} kullanılabilir.
