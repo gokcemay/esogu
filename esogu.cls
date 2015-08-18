@@ -34,7 +34,7 @@
 %
 %
 %Şablonla ilgili sorular için www.gmay.me adresinden Gökçe Mehmet AY'a ulaşabilirsiniz.
-% test
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \LoadClass[12pt, a4paper, oneside]{memoir}		%Seçenekler sırasıyla 12punto, A4 kağıt, tek taraflı baskı olacak, Kaynak dizinine numara ver
@@ -291,9 +291,3 @@
 % Daha fazla bilgi için http://en.wikibooks.org/wiki/LaTeX/Page_Layout
 
 %----------------------------------------------------
-
-
-
-
-
-
