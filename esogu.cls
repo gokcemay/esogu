@@ -61,11 +61,29 @@
 
 %------------------ Referanslar için ---------------------
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
-\usepackage[citestyle=authoryear,bibstyle=authoryear]{biblatex}
+\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2]{biblatex}
+
+\renewcommand*{\finalnamedelim}{\addspace ve\space}%and yerine ve koyması için
+\renewcommand*{\nameyeardelim}{\addcomma\space} %isimle yıl arası virgül için
+
+\DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}					%and yerine ve koyması için
 \DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
-%---------------------------------------------------------
+
+
+%Figür ve tablo açıklaması için
+\usepackage{boxhandler} %Figürün başından figür yazısının başlaması için bu paket kullanıyor. Tablolar için bunu aktiflemedim. Ancak çok küçük figürler için problem var.
+
+\captiontitlefont{\normalfont}% açıklama başlık fontu
+\precaption{\raggedright}% açıklama nosu için
+\captiondelim{\space}% newline
+\captionstyle{\centerlastline}% for title
+\setlength{\belowcaptionskip}{\onelineskip}
+
+\addto\captionsturkish{%
+  \renewcommand{\tablename}{Çizelge}
+}
 
 %-------------SAYFA DÜZENİ--------------------------------
 
@@ -109,9 +127,18 @@
 \let\@afterindentfalse\@afterindenttrue
 \@afterindenttrue
 
+%TOC
+\maxtocdepth{subsubsection}
+
+
+
+
 %------Bölüm stili-----
+
+%\renewcommand{\thesection}{\thechapter\arabic{section}.}
 %--- Aşağıdaki makro bölümün görünüşünü düzenler.----
 \makechapterstyle{bolum}{%
+
 \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \baselineskip}		%Başlıktan sonra 2 satır bırak.
 \renewcommand{\chaptitlefont}{\centering\normalfont\Large\bfseries}	%Başlık için 14 font kullan ve ortala
 \renewcommand{\chapnumfont}{\centering\normalfont\Large\bfseries}		%Başlık için 14 font kullan ve ortala
@@ -119,9 +146,15 @@
 \renewcommand*{\printchaptername}{}			
 \renewcommand*{\chapternamenum}{}			
 \renewcommand*{\chapnumfont}{\chaptitlefont}
-\renewcommand*{\printchapternum}{\chapnumfont \thechapter . \space} 
+\renewcommand{\printchapternum}{\chapnumfont \thechapter . \space} 
 \renewcommand*{\afterchapternum}{}
 \afterchaptertitle
+\renewcommand{\cftchapteraftersnum}{.}
+\renewcommand{\cftsectionaftersnum}{.}
+\renewcommand{\cftsubsectionaftersnum}{.}
+\renewcommand{\cftsubsubsectionaftersnum}{.}
+\renewcommand{\subsubsecheadstyle}{\noindent\bfseries\underline}
+
 }
 
 %----------Şekiller ve Çizelgeler dizini-------
@@ -131,12 +164,19 @@
 \renewcommand{\cftchapterdotsep}{\cftdotsep}		% İçindekilerde bölüm başlıklarının da noktaları olması için
 
 
-\addtocontents{lof}{\underline{\textbf{Şekil}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
-\addtocontents{lot}{\underline{\textbf{Çizelge}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
 
+\addtocontents{lof}{\underline{\noindent\textbf{Şekil}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
+\addtocontents{lot}{\underline{\textbf{Çizelge}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
+% \renewcommand*{\afterloftitle}{\thispagestyle{plain}%
+% \par\nobreak {\normalfont Figure \hfill Page}\par\nobreak}
 
 %----------------Resimler----------------------
-\setlength{\textfloatsep}{2\baselineskip}
+%\setlength{\textfloatsep}{2\baselineskip}
+\setlength{\floatsep}{3\onelineskip}
+ \setlength{\intextsep}{2\onelineskip}
+\setlength{\textfloatsep}{2\onelineskip}
+ \setlength{\dblfloatsep}{2\onelineskip}
+ \setlength{\dbltextfloatsep}{2\onelineskip}
 
 %---Sayfa numaraları----
 \copypagestyle{chapter}{plain}
@@ -161,6 +201,9 @@
 %----------Kaynak dizini-----------------
 
 \setlength{\bibitemsep}{2\parskip}
+
+
+
 %----TEZLE İlgili değişkenler tanımlama-------------------------------%
 
 \newcommand*{\yazarismi}[1]{\def\yazar{#1}}
@@ -191,7 +234,6 @@
 \newcommand*{\enstitumuduru}[1]{\def\mudur{#1}}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%
 %---------ÖNEMLİ-------------
 %----TEZLE İLGİLİ Bilgileri burada giriniz.---------------------------%
@@ -217,6 +259,8 @@
 \enstitumuduru{Ünvan İsim Soyad} 
 %------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \chapterstyle{bolum}
 
