@@ -125,9 +125,18 @@
 \let\@afterindentfalse\@afterindenttrue
 \@afterindenttrue
 
+%TOC
+\maxtocdepth{subsubsection}
+
+
+
+
 %------Bölüm stili-----
+
+%\renewcommand{\thesection}{\thechapter\arabic{section}.}
 %--- Aşağıdaki makro bölümün görünüşünü düzenler.----
 \makechapterstyle{bolum}{%
+
 \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \baselineskip}		%Başlıktan sonra 2 satır bırak.
 \renewcommand{\chaptitlefont}{\centering\normalfont\Large\bfseries}	%Başlık için 14 font kullan ve ortala
 \renewcommand{\chapnumfont}{\centering\normalfont\Large\bfseries}		%Başlık için 14 font kullan ve ortala
@@ -135,9 +144,15 @@
 \renewcommand*{\printchaptername}{}			
 \renewcommand*{\chapternamenum}{}			
 \renewcommand*{\chapnumfont}{\chaptitlefont}
-\renewcommand*{\printchapternum}{\chapnumfont \thechapter . \space} 
+\renewcommand{\printchapternum}{\chapnumfont \thechapter . \space} 
 \renewcommand*{\afterchapternum}{}
 \afterchaptertitle
+\renewcommand{\cftchapteraftersnum}{.}
+\renewcommand{\cftsectionaftersnum}{.}
+\renewcommand{\cftsubsectionaftersnum}{.}
+\renewcommand{\cftsubsubsectionaftersnum}{.}
+\renewcommand{\subsubsecheadstyle}{\noindent\bfseries\underline}
+
 }
 
 %----------Şekiller ve Çizelgeler dizini-------
@@ -147,7 +162,7 @@
 \renewcommand{\cftchapterdotsep}{\cftdotsep}		% İçindekilerde bölüm başlıklarının da noktaları olması için
 
 
-\addtocontents{lof}{\underline{\textbf{Şekil}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
+\addtocontents{lof}{\underline{\noindent\textbf{Şekil}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
 \addtocontents{lot}{\underline{\textbf{Çizelge}}~\hfill\underline{\textbf{Sayfa}}\par}		% Şekil listesinin sağına Şekil soluna sayfa eklemek için
 % \renewcommand*{\afterloftitle}{\thispagestyle{plain}%
 % \par\nobreak {\normalfont Figure \hfill Page}\par\nobreak}
