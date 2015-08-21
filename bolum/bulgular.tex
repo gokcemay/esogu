@@ -1,10 +1,26 @@
+\chapter{BULGULAR VE TARTIŞMA}
+
+Basit iki terimle \acrfull{OBEB} ve \acrfull{OKEK} kısaltmaları anlatabiliriz. İster kısaltmasını \acrshort{OBEB}, isterseniz de uzun açılımını \acrlong{OKEK} yazdırabilirsiniz. Bunu yapabilmek için dosyanın başında terimleri tanımlamanız gereklidir. İsterseniz matematik terimlerini de, örneğin \acrshort{pi} böyle tanımlayabilirsiniz. Uzun uzun \acrfull{pi} yazmanız gerekmez. 
+
+Teorem yazmak isterseniz:
+\begin{theorem}[Öklid]
+ İki noktadan bir ve yalnız bir doğru geçer.
+\end{theorem}
+
+İspat yazmak isterseniz:
+\begin{ispat}[Tezin en önemli ispatı]
+x=10
+\end{ispat}
 \lipsum[1-2]
-\section{Örnekler}
-Eğer metin içinde tabloya referans vermek isterseniz Tablo \ref{tab:den} yazarsınız. 
-% ----TABLO Örneği--------
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{gorseller/ptaTorc}
+\caption{PTA Torç}\label{fig:PtaTorc1}
+\end{figure}
+\lipsum[1-2]
 \begin{table}
 \centering
-\caption{Deneme Tablosu.}\label{tab:den}
+\caption{Deneme Tablosu.}\label{tab:den1}
 \begin{tabular}{|l|l|l|}
 \hline
 sıra   & sayı   & toplam \\ \hline
@@ -14,7 +30,91 @@ Kelime & deneme & son    \\ \hline
 \end{table}
 
 
-\subsection{Matematik}
+\section{Bulgular ve Tartışma Birinci Derece Başlık}
+\lipsum[1-2]
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{gorseller/ptaTorc}
+\caption{PTA Torç}\label{fig:PtaTorc1}
+\end{figure}
+\lipsum[1-2]
+\begin{table}
+\centering
+\caption{Deneme Tablosu.}\label{tab:den1}
+\begin{tabular}{|l|l|l|}
+\hline
+sıra   & sayı   & toplam \\ \hline
+1      & 2      & 3      \\ \hline
+Kelime & deneme & son    \\ \hline
+\end{tabular}
+\end{table}
+Teorem yazmak isterseniz:
+\begin{theorem}[Öklid]
+ İki noktadan bir ve yalnız bir doğru geçer.
+\end{theorem}
+
+İspat yazmak isterseniz:
+\begin{ispat}[Tezin en önemli ispatı]
+x=10
+\end{ispat}
+
+\subsection{Bulgular ve Tartışma ikinci derece başlık}
+\lipsum[1-2]
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{gorseller/ptaTorc}
+\caption{PTA Torç}\label{fig:PtaTorc1}
+\end{figure}
+\lipsum[1-2]
+\begin{table}
+\centering
+\caption{Deneme Tablosu.}\label{tab:den1}
+\begin{tabular}{|l|l|l|}
+\hline
+sıra   & sayı   & toplam \\ \hline
+1      & 2      & 3      \\ \hline
+Kelime & deneme & son    \\ \hline
+\end{tabular}
+\end{table}
+
+Teorem yazmak isterseniz:
+\begin{theorem}[Öklid]
+ İki noktadan bir ve yalnız bir doğru geçer.
+\end{theorem}
+
+İspat yazmak isterseniz:
+\begin{ispat}[Tezin en önemli ispatı]
+x=10
+\end{ispat}
+
+\subsubsection{Bulgular ve tartışma dördüncü derece başlık}
+\lipsum[1-2]
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{gorseller/ptaTorc}
+\caption{PTA Torç}\label{fig:PtaTorc1}
+\end{figure}
+\lipsum[1-2]
+\begin{table}
+\centering
+\caption{Deneme Tablosu.}\label{tab:den1}
+\begin{tabular}{|l|l|l|}
+\hline
+sıra   & sayı   & toplam \\ \hline
+1      & 2      & 3      \\ \hline
+Kelime & deneme & son    \\ \hline
+\end{tabular}
+\end{table}
+
+Teorem yazmak isterseniz:
+\begin{theorem}[Öklid]
+ İki noktadan bir ve yalnız bir doğru geçer.
+\end{theorem}
+
+İspat yazmak isterseniz:
+\begin{ispat}[Tezin en önemli ispatı]
+x=10
+\end{ispat}
 Eğer metin içinde \(\lim_{x \to \infty} \exp(-x) = 0\) ya da ortalayabilir
 \begin{displaymath}
 \cos (2\theta) = \cos^2 \theta - \sin^2 \theta
@@ -34,10 +134,6 @@ Daha fazlası için mhchem paketine bakınız.
 \section{Analiz}
 Eğer metin içinde şekile referans vermek isterseniz Şekil\ref{fig:PtaTorc} yazarsınız. 
 
-\bxfigure[h]
-{PTA Torç \label{fig:PtaTorc}}
-{\includegraphics[width=\textwidth]{gorseller/ptaTorc}}
-\lipsum[1-2]
 Kaynakça böyle verilebilir \parencite{celik_microstructure_2013} ya da iki yazarlı ise böyle verilebilir \parencite{gatto_plasma_2004} veya ikiden fazla ise böyle verilebilir.
 \parencite{celik_effects_2011}
 

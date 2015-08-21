@@ -23,13 +23,40 @@
 % Eğer Tezinizi bu dosyada yazacaksanız "TEZİNİZİ BURADAN SONRA EKLEYİNİZ" bölümünden sonra ekeleyebilirsiniz. Özet ve Summary bölümleri /bolum klasörünün içindedir. 
 
 
-%  deneme git için
-
-
 \documentclass[]{esogu}			% Optionlar boş olacak, şablonu kullanmak için
 \usepackage{lipsum}				% Örnek tezde anlamsız metin yazmak için bu paket gerekli. Tezinizde bu bölümü silebilirsiniz. 
 
 \bibliography{kaynakca.bib}		% Kaynakça dosyası için Bunu Zotero, Mendeley, Endnote ya da CiteU gibi bir programla oluşturmanızı tavsiye ederim. Zotero hakkında bilgi http://makina.gmay.me/Bulutta/ adresindeki ekitapta mevcut.
+
+
+
+%%%%%%%KISALTMALAR%%%%%%%%%%%%%%%%%%%
+%% Kısaltmalar için lütfen glossaries paketine bakınız.
+\newglossarystyle{mylong3col}{%
+  \setglossarystyle{long3colheader}%
+  \renewcommand\entryname{Simge veya Kısaltma}
+  \renewcommand\descriptionname{Tanım}
+  \renewcommand{\pagelistname}{Sayfa Numarası}
+  \renewenvironment{theglossary}%
+    {\begin{longtable}[l]{@{}lp{0.5\hsize}p{0.3\hsize}}}%
+    {\end{longtable}}%
+}
+
+
+\makeglossaries
+ 
+\newacronym{OBEB}{OBEB}{Ortak Katların En Büyüğü}
+ 
+\newacronym{OKEK}{OKEK}{Ortak Katların En Küçüğü}
+
+\newacronym{pi}{$\pi$}{$\pi$ sayısı}
+
+
+
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 \begin{document}
@@ -39,23 +66,17 @@
 %-----Dış kapak Türkçe---------- Burayı değiştirmeyin
 \begin{titlingpage*}
 \begin{center}
-\footnotesize
 
-\vspace{9cm}								% Metnin yukarı mesafesi
-	\begin{vplace}							% Metni ortalamak için
-	\large									%tezbaşlığını büyük yazmak için
+\vspace*{8cm}								% Metnin yukarı mesafesi * olmazsa sayfa başında boşluk silinir
 	\tbaslik\\								% Tez başlığı
-	\footnotesize							% 10 puntoya düş
-
-	\vspace{1pc}
+	\vspace{1pc}							%12 punto boşluk ver
 	\yazar	\\								% yazar ismi
-	\vspace{1pc}
+	\vspace{1pc}							%12 punto boşluk ver
 	\textbf{\unvan\space TEZİ}\\
-  	\vspace{1pc}
+    \vspace{1pc}							%12 punto boşluk ver
 	\bolum \space Anabilim Dalı\\
-	\vspace{1pc}
+    \vspace{1pc}							%12 punto boşluk ver
 	\teslim\\
-	\end{vplace}
 \end{center}
 
 \end{titlingpage*}
@@ -63,23 +84,17 @@
 %-----Dış kapak İngilizce-----Burayı değiştirmeyin-----
 \begin{titlingpage*}
 \begin{center}
-\footnotesize
 
-
-	\begin{vplace}							% Metni ortalamak için
-	\large									%tezbaşlığını büyük yazmak için
+\vspace*{8cm}
 	\tbasliken\\								% Tez başlığı
-	\footnotesize							% 10 puntoya düş
-
 	\vspace{1pc}
 	\yazar	\\								% yazar ismi
 	\vspace{1pc}
-	\textbf{\unvanen\space THESIS}\\
+	\textbf{\unvanen}\\
   	\vspace{1pc}
 	\bolumen \space Department\\
 	\vspace{1pc}
 	\teslimen\\
-	\end{vplace}
 \end{center}
 
 \end{titlingpage*}
@@ -89,12 +104,11 @@
 
 \begin{titlingpage*}
 \begin{center}
-\footnotesize
-\begin{vplace}							% Metni ortalamak için
+\vspace*{10mm}
 \tbaslik\\								% Tez başlığı
-\vspace{7pc}							% 12 punto 7 boşluk için
+\vspace{12pc}							% 12 punto 7 boşluk için
 \yazar	\\								% yazar ismi
-\vspace{7pc}							% 12 punto 7 boşluk için
+\vspace{8pc}							% 12 punto 7 boşluk için
 Eskişehir Osmangazi Üniversitesi\\		
 Fen Bilimleri Enstitüsü\\
 Lisansüstü Yönetmeliği Uyarınca\\
@@ -104,11 +118,9 @@ Lisansüstü Yönetmeliği Uyarınca\\
 Olarak Hazırlanmıştır\\
 \vspace{7pc}
 Danışman:\space \danisman\\			
-\vspace{2pc}
-\proje\\ 								%Varsa proje kapsamında desteklenip desteklenmediği buraya yazılacak
-\end{vplace}
-
 \vfill
+\proje\\ 								%Varsa proje kapsamında desteklenip desteklenmediği buraya yazılacak
+\vspace{1pc}
 \teslim\\
 \vspace{2cm}
 \end{center}
@@ -123,7 +135,9 @@ Danışman:\space \danisman\\
 \textbf{ONAY} 
 \normalsize
 \end{center}
-\bolum \space Anabilim Dalı \unvan \space öğrencisi \yazar \space tezi olarak hazırladığı "\textbf{\tbaslik}" başlıklı bu çalışma, jürimizce lisansüstü yönetmeliğin ilgili maddeleri uyarınca değerlendirilerek kabul edilmiştir.
+
+\bolum \space Anabilim Dalı \unvan \space öğrencisi \yazar'ın \space \unvan\space tezi olarak hazırladığı "\textbf{\tbaslik}" başlıklı bu çalışma,\space jürimizce lisansüstü yönetmeliğin ilgili maddeleri uyarınca \\değerlendirilerek kabul edilmiştir.
+\vspace{15mm}
 
 \noindent \textbf{Danışman}\space\space\space\space\space\space\space\space:\space \danisman 
 
@@ -142,26 +156,28 @@ Danışman:\space \danisman\\
 
 \noindent \textbf{Üye :\space}\jbes
 
+\vspace{15mm}
 
 \begin{framed}
 Fen Bilimleri Enstitüsü Yönetim Kurulu'nun ........................ tarih ve  \space \space \space \space \space\\................... sayılı kararıyla onaylanmıştır. 
 \newline
 \newline
 \begin{flushright}
-\mudur \hspace{1cm}
-
-Enstitü Müdürü\space \space \space \space \space \space \space \space \space \space \space \space \space  %Düzeltilecek ***Biliyorum çok kötü ama hspace çalışmadı
+\mudur \\
+Enstitü Müdürü\space \space \space \space \space \space \space \space \space \space \space \space \space \space %Düzeltilecek ***Biliyorum çok kötü ama hspace çalışmadı
 \end{flushright}
 
 \end{framed}
 
 
 %-------------------Şekiller ve Çizelgeler Dizini----------------
-\renewcommand{\listfigurename}{Şekiller Dizini}
-\renewcommand{\listtablename}{Çizelgeler Dizini}
+\renewcommand{\listfigurename}{ŞEKİLLER DİZİNİ}
+\renewcommand{\listtablename}{ÇİZELGELER DİZİNİ}
+
+\setlength\beforechapskip{-\baselineskip}
 
 
-\chapter{Etik Beyan}
+\normalsize
 \input{bolum/etik}
 \clearpage
 
@@ -171,14 +187,21 @@ Enstitü Müdürü\space \space \space \space \space \space \space \space \space
 
 
 
-\tableofcontents
+\tableofcontents*
 \newpage
 \listoffigures
 \newpage
 \listoftables
 
 \clearpage
-
+\printglossary[style=mylong3col, type=\acronymtype, title=Simgeler ve Kısaltmalar Dizini, toctitle=SİMGELER VE KISALTMALAR DİZİNİ]
+\clearpage
+\renewcommand{\listtheoremname}{TEOREMLER LİSTESİ}
+\listoftheorems[ignoreall,onlynamed={theorem}]
+\clearpage
+\renewcommand{\listtheoremname}{İSPATLAR LİSTESİ}
+\listoftheorems[ignoreall, show={ispat}]
+\clearpage
 
 \mainmatter %arap harfleri ile yazdırmak için
 % AltBölüm numaralaması
@@ -188,13 +211,10 @@ Enstitü Müdürü\space \space \space \space \space \space \space \space \space
 
 
 \include{bolum/Giris}				% Metni dosyadan çağırmak için örnek
-\chapter{Literatür Araştırması}					% Metni main.tex dosyasında yazmak için örnek
-\lipsum 
-\chapter{Bulgular ve Tartışma}		% Konu başlığını ve bir kaç satırı main.tex dosyasında yazıp kalanları dış dosyadan almak için örnek. 
-Ğ Ş İ gna-gtjsnthjnjfg frakıgnre. gırengğoehnttodgn. gnteıhnrewğhton. nnıdgeantğ. kkkkkk kkkkkk kkkk   kkkkkk kkkkkk kkkkk kkkk kkk kkkkk kkkkkk kkkkkkkk kkkkkk  kkkkkk kkkkkk kkk kkk kkkk kkk kkkk.jkjjj jjjjjj jjjjjjjjjjL 
-\input{bolum/bulgular}	
+\include{bolum/literatur}
+\include{bolum/bulgular}
 \input{bolum/sonuclar}
-%\input{bolum/sekildeneme}
+
 \newpage
 
 \printbibliography[ title={KAYNAKLAR\space DİZİNİ}] %numaralı olsun istersen optionlarda heading=bibnumbered, yaz
@@ -202,6 +222,6 @@ Enstitü Müdürü\space \space \space \space \space \space \space \space \space
   \section*{#1}%
   \markboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}}
   
-\noindent \addtocontents{toc}{\textbf{Özgeçmiş}}   % Sadece doktora tezleri için
+\addcontentsline{toc}{chapter}{\textbf{Özgeçmiş}}   % Sadece doktora tezleri için
 
 \end{document}

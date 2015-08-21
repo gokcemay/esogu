@@ -60,9 +60,19 @@
 \usepackage{amsmath}			% Matematik için
 \usepackage[version=3]{mhchem}	% Kimya formülleri için
 
+\usepackage[acronym, toc]{glossaries}
+
+
+%-----Teoremler için--------
+\usepackage{thmtools}
+\declaretheorem[name=Teorem]{theorem}
+\declaretheorem[name=İspat]{ispat}
+
+%Kendi environmentanızı tanımlamak isterseniz yukarıdaki gibi tanımlayabilirsiniz. Listesini oluşturmak için lütfen şablondaki listelerin nasıl yapıldığna bakın, olmazsa thmtools'un kullanım kılavuzuna bakın. 
+
 %------------------ Referanslar için ---------------------
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
-\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2]{biblatex}
+\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2, maxbibnames=99]{biblatex}
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}%and yerine ve koyması için
 \renewcommand*{\nameyeardelim}{\addcomma\space} %isimle yıl arası virgül için
@@ -86,11 +96,15 @@
   \renewcommand{\tablename}{Çizelge}
 }
 
+%------------Denklemler Dizini
+
+
+
 %-------------SAYFA DÜZENİ--------------------------------
 
 \setlrmarginsandblock{3cm}{2.5cm}{*}	% sayfa sol sağ
 \setulmarginsandblock{3cm}{2.5cm}{*}	% sayfa üst alt
-\setheaderspaces{2cm}{*}{*}				% header uzaklığı için
+\setheaderspaces{15mm}{*}{*}				% header uzaklığı için
 
 \checkandfixthelayout
 
@@ -99,11 +113,16 @@
 
 
 %---------SAYFA SONLARI DÜZGÜN OLSUN ve DİĞER GÜZELLEŞTİRMELER
+\brokenpenalty=10000              		% Sayfalar/sütunlar arasında kesik kelime yok
 
 
 \doublehyphendemerits=10000       		% Ard arda kesilmiş kelime yok
-
-% \hyphenpenalty 10000					% Kesik kelime olmasın 
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+% Kesik kelime olmasın değer 10000 olursa
+\righthyphenmin=72
 
 % \exhyphenpenalty 10000				% Kesik kelimenin olduğu satırın yakınlarında da başka kesik kelime olmasın.
 
@@ -157,7 +176,6 @@
 \renewcommand{\subsubsecheadstyle}{\noindent\bfseries\underline}
 
 }
-
 %----------Şekiller ve Çizelgeler dizini-------
 
 \addtocontents{toc}{~\hfill\underline{\textbf{Sayfa}}\par}		% İçindekilerin soluna sayfa eklemek için
@@ -238,18 +256,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %---------ÖNEMLİ-------------
 %----TEZLE İLGİLİ Bilgileri burada giriniz.---------------------------%
-\yazarismi{Öğrenci İsmi}						% Yazar adı, İsim ve Soyad ilk harfler Büyük
-\tezbaslik{Tez Başlığı} 							% Tez başlığınızı buraya giriniz
-\tezbasliken{Thesis Title} 						% İngilizce Tez başlığınızı buraya giriniz
-\danismanismi{Ünvan.İsim Soyad}		% Danışman ismi
-\ikincidanismanismi{}							% İkinci danışman ismi
-\juribir{Bir İsim Soyad}						% Juri
-\juriiki{İki İsim Soyad}						% Juri
-\juriuc{Uc İsim Soyad}							% Juri
-\juridort{Dort İsim Soyad}						% Juri
-\juribes{Dort İsim Soyad}						% Juri
+\yazarismi{Mustafa Ertunç TAT}						% Yazar adı, İsim ve Soyad ilk harfler Büyük
+\tezbaslik{Aaaaaa Bbbbbb Cccccc Çççççç Ddddddd Eeeeeeee} 							% Tez başlığınızı buraya giriniz
+\tezbasliken{Fffffffff Ggggggggg Hhhhhhhh Jjjjjjjjj} 						% İngilizce Tez başlığınızı buraya giriniz
+\danismanismi{Doç.Dr. Mustafa Ertunç TAT}		% Danışman ismi
+\ikincidanismanismi{Doç.Dr. Mustafa Ertunç TAT}							% İkinci danışman ismi
+\juribir{Doç.Dr. Mustafa Ertunç TAT}						% Juri
+\juriiki{Doç.Dr. Mustafa Ertunç TAT}						% Juri
+\juriuc{Doç.Dr. Mustafa Ertunç TAT}							% Juri
+\juridort{Doç.Dr. Mustafa Ertunç TAT}						% Juri
+\juribes{Doç.Dr. Mustafa Ertunç TAT}						% Juri
 \unvanismi{DOKTORA}								% BÜYÜK HARFLE yazılacak DOKTORA ya da YÜKSEK LİSANS
-\unvanismien{DOCTOR OF PHILOSOPHY}				% İngilizce ünvan
+\unvanismien{DOCTORAL DISSERTATION}				% İngilizce ünvan
 \bolumismi{Makine Mühendisliği}					% Anabilim dalı (bölüm) ismi
 \bolumismien{Mechanical Engineering}					% İngilizce Anabilim dalı (bölüm) ismi
 
@@ -257,7 +275,7 @@
 \projedestek{BAP projesi ile desteklenmiştir}	% Eğer bir proje ile desteklendiyse
 \teslimtarihi{ARALIK 2015}						% Tez teslim ayı
 \teslimtarihien{DECEMBER 2015}					% İngilizce Tez teslim ayı
-\enstitumuduru{Ünvan İsim Soyad} 
+\enstitumuduru{Prof.Dr. Hürriyet ERŞAHAN} 
 %------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
