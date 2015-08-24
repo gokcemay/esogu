@@ -60,8 +60,8 @@
 \usepackage{amsmath}			% Matematik için
 \usepackage[version=3]{mhchem}	% Kimya formülleri için
 
-\usepackage[acronym, toc]{glossaries}
 
+\usepackage[acronym, toc]{glossaries}   % Simgeler ve Kısaltmalar dizini için paket. Ancak PERL istiyor, lütfen PERL kurunuz
 
 %-----Teoremler için--------
 \usepackage{thmtools}
@@ -72,7 +72,7 @@
 
 %------------------ Referanslar için ---------------------
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
-\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2, maxbibnames=99]{biblatex}
+\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2, maxbibnames=99, backend=bibtex8]{biblatex}
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}%and yerine ve koyması için
 \renewcommand*{\nameyeardelim}{\addcomma\space} %isimle yıl arası virgül için

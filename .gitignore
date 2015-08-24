@@ -1,0 +1,15 @@
+*.aux
+esogu.log
+tez-blx.bib
+*.acn
+tez.bbl
+*.ist
+tez.loe
+*.glo
+tez.lof
+*.lot
+tez.out
+*.pdf
+tez.run.xml
+*.gz
+tez.toc
