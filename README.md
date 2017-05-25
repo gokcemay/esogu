@@ -17,10 +17,10 @@ Eskişehir Osmangazi Üniversitesi Fen Bilimleri Enstitüsü Aralık 2014 [Tez Y
 - Kullanım kılavuzu yapılması
 
 ## Kısa yoldan kullanım:
-   $ lualatex -shell-escape DOSYA.tex
-   $ bibtex DOSYA
-   $ lualatex -shell-escape DOSYA.tex
-   $ lualatex -shell-escape DOSYA.tex
+   $ lualatex -shell-escape DOSYA.tex 
+   $ bibtex DOSYA 
+   $ lualatex -shell-escape DOSYA.tex 
+   $ lualatex -shell-escape DOSYA.tex 
 
 ## Notlar:
 - pdflatex, fontspec paketi yüzünden çalışmıyor. fontspec ise %100 "Times New Roman" fontu için gerekiyor.
