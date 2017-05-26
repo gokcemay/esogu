@@ -23,7 +23,7 @@ Eskişehir Osmangazi Üniversitesi Fen Bilimleri Enstitüsü Aralık 2014 (Günc
    $ lualatex -shell-escape DOSYA.tex   
 
 ## Notlar:
-- pdflatex, fontspec paketi yüzünden çalışmıyor. fontspec ise %100 "Times New Roman" fontu için gerekiyor.
+- pdflatex, fontspec paketi yüzünden çalışmıyor. fontspec ise %100 uyumlu "Times New Roman" fontu için gerekiyor.
 
 [Tez Yazım Kılavuzuna (PDF)]: http://fenenst.ogu.edu.tr/Storage/FenBilimleriEnstitusu/Uploads/ESOGU_FBE_TEZ_YAZIM_KILAVUZU_10_02_2016.pdf
 [Memoir]: http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
