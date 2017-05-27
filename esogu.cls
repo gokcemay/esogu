@@ -53,7 +53,7 @@
 %----------------------------------------------------
 
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage[draft=false,unicode=true,pdflang=turkish,hidelinks=true]{hyperref}
 \usepackage{graphicx}
 \usepackage{framed}				%kutu çizmek için
 % \usepackage{pdflscape}		% Yatık sayfa gerekirse
