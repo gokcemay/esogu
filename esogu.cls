@@ -74,6 +74,7 @@
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
 \usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2, maxbibnames=99, backend=bibtex8]{biblatex}
 
+\DeclareNameAlias{sortname}{last-first} % ikinci yazarın soyadı isminin kısaltması olsun diye.
 
 \DeclareFieldFormat
   [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
