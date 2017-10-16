@@ -25,6 +25,10 @@
 
 \documentclass[]{esogu}			% Optionlar boş olacak, şablonu kullanmak için
 \usepackage{lipsum}				% Örnek tezde anlamsız metin yazmak için bu paket gerekli. Tezinizde bu bölümü silebilirsiniz. 
+\usepackage{atbegshi} % İçindekiler, şekiller ve çizelgelerde birinci sayfadan sonraki sayfalara devam yazmak için
+\makeatletter
+\newcommand{\AtBeginShipoutClear}{\gdef\AtBegShi@Hook{}}
+\makeatother
 
 \bibliography{kaynakca.bib}		% Kaynakça dosyası için Bunu Zotero, Mendeley, Endnote ya da CiteU gibi bir programla oluşturmanızı tavsiye ederim. Zotero hakkında bilgi http://makina.gmay.me/Bulutta/ adresindeki ekitapta mevcut.
 
@@ -185,13 +189,18 @@ Enstitü Müdürü\space \space \space \space \space \space \space \space \space
 \include{bolum/summary}
 \include{bolum/tesekkur}
 
-
-
+\AtBeginShipout{\protect\chapter*{İÇİNDEKİLER (Devam)}}
 \tableofcontents*
+\AtBeginShipoutClear
 \newpage
+\AtBeginShipout{\protect\chapter*{ŞEKİLLER DİZİNİ (Devam)}}
 \listoffigures
+\AtBeginShipoutClear
 \newpage
+\AtBeginShipout{\protect\chapter*{ÇİZELGELER DİZİNİ (Devam)}}
 \listoftables
+\AtBeginShipoutClear
+\clearpage
 
 \clearpage
 \printglossary[style=mylong3col, type=\acronymtype, title=Simgeler ve Kısaltmalar Dizini, toctitle=SİMGELER VE KISALTMALAR DİZİNİ]
