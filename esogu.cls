@@ -78,7 +78,7 @@
 
 \DeclareFieldFormat
   [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
-  {title}{{#1\isdot}} %Tırnak işaretlerini silinmesi için
+  {title}{{#1\isdot\addcomma}} %Tırnak işaretlerini silinmesi için
 \DeclareFieldFormat{pages}{#1}% sayfalardan önce p ve pp'nin silinmesi için Turkish lbx'de bunları isterseniz s. yapabilirsiniz.
 
 \renewbibmacro{in:}{} %Yayın isminden önceki İn yazısını siler
@@ -87,11 +87,13 @@
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}%and yerine ve koyması için
 \renewcommand*{\nameyeardelim}{\addcomma\space} %isimle yıl arası virgül için
+\renewcommand*{\labelnamepunct}{\addcomma\space} %Yıl ile yayın başlığı arasına virgül için
 
 \DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}					%and yerine ve koyması için
 \DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
+
 
 
 %Figür ve tablo açıklaması için
