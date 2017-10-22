@@ -73,6 +73,7 @@
 %------------------ Referanslar için ---------------------
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
 \usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2, maxbibnames=99, backend=bibtex8, firstinits=true]{biblatex}
+\usepackage{xpatch}
 
 \DeclareNameAlias{sortname}{last-first} % ikinci yazarın soyadı isminin kısaltması olsun diye.
 
@@ -93,6 +94,14 @@
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}					%and yerine ve koyması için
 \DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
+
+% Yıl etrafındaki parentezleri kaldırmak için authoryear.bbx'de değişikliği xpatch paketiyle yapabiliriz: (2016) --> 2016
+\xpatchbibmacro{date+extrayear}{%
+ \printtext[parens]%
+ }{%
+ \setunit*{\addcomma\space}%
+ \printtext%
+}{}{}
 
 
 
