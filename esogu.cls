@@ -72,13 +72,14 @@
 
 %------------------ Referanslar için ---------------------
 %Biblatex ne yazık ki Türkçe'yi desteklemiyor. Bibtex'in 8bit desteklememesi yüzünden onu kullanıyorum. Aşağıda ve ve vd'nin doğru olması için yapılmış değişiklikler var. Geliştirmek için natbib ile nasıl olacağına bakılabilir.
-\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2, maxbibnames=99, backend=bibtex8]{biblatex}
+\usepackage[citestyle=authoryear,bibstyle=authoryear, maxcitenames=2, maxbibnames=99, backend=bibtex8, firstinits=true]{biblatex}
+\usepackage{xpatch}
 
 \DeclareNameAlias{sortname}{last-first} % ikinci yazarın soyadı isminin kısaltması olsun diye.
 
 \DeclareFieldFormat
   [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
-  {title}{{#1\isdot}} %Tırnak işaretlerini silinmesi için
+  {title}{{#1\isdot\addcomma}} %Tırnak işaretlerini silinmesi için
 \DeclareFieldFormat{pages}{#1}% sayfalardan önce p ve pp'nin silinmesi için Turkish lbx'de bunları isterseniz s. yapabilirsiniz.
 
 \renewbibmacro{in:}{} %Yayın isminden önceki İn yazısını siler
@@ -87,11 +88,21 @@
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}%and yerine ve koyması için
 \renewcommand*{\nameyeardelim}{\addcomma\space} %isimle yıl arası virgül için
+\renewcommand*{\labelnamepunct}{\addcomma\space} %Yıl ile yayın başlığı arasına virgül için
 
 \DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
 
 \renewcommand*{\finalnamedelim}{\addspace ve\space}					%and yerine ve koyması için
 \DefineBibliographyStrings{english}{andothers={\space vd. \space}}		%et al yerine vd koyması için
+
+% Yıl etrafındaki parentezleri kaldırmak için authoryear.bbx'de değişikliği xpatch paketiyle yapabiliriz: (2016) --> 2016
+\xpatchbibmacro{date+extrayear}{%
+ \printtext[parens]%
+ }{%
+ \setunit*{\addcomma\space}%
+ \printtext%
+}{}{}
+
 
 
 %Figür ve tablo açıklaması için
