@@ -47,7 +47,7 @@
 %----------Dili Türkçe ve fontu ayarlamak için---------------
 \usepackage{polyglossia}			
 \setmainlanguage{turkish}
-
+\PolyglossiaSetup{turkish}{indentfirst=true}
 \usepackage{fontspec}
 \setmainfont[Language=Turkish]{Times New Roman}		%Times new roman için
 %----------------------------------------------------
